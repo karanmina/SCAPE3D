@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order — Scape 3D</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // ⚠️ SETUP REQUIRED — See README.md for EmailJS configuration steps
+    // Replace with your actual EmailJS credentials after setup
+    emailjs.init("YOUR_PUBLIC_KEY");
+  </script>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">SCAPE<span>3D</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="order.html" class="nav-cta active">Order Now</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="order.html">Order Now</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="section-tag">GET STARTED</div>
+    <h1>Place Your Order</h1>
+    <p>Fill in the details below and we'll get back to you with a quote within a few hours.</p>
+  </div>
+</section>
+
+<section class="order-section">
+  <div class="container order-container">
+
+    <!-- FORM -->
+    <div class="order-form-wrapper">
+      <div class="form-steps">
+        <div class="form-step active" data-step="1">
+          <span class="step-circle">1</span> Your Info
+        </div>
+        <div class="step-line"></div>
+        <div class="form-step" data-step="2">
+          <span class="step-circle">2</span> Project Details
+        </div>
+        <div class="step-line"></div>
+        <div class="form-step" data-step="3">
+          <span class="step-circle">3</span> Upload & Submit
+        </div>
+      </div>
+
+      <form id="orderForm" novalidate>
+
+        <!-- STEP 1: Personal Info -->
+        <div class="form-panel" id="panel1">
+          <h3>Your Information</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Jane" required />
+              <span class="field-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
+              <span class="field-error"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+            <span class="field-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" />
+          </div>
+          <div class="form-group">
+            <label for="company">Company / Organization</label>
+            <input type="text" id="company" name="company" placeholder="Optional" />
+          </div>
+          <div class="form-group">
+            <label for="country">Country *</label>
+            <select id="country" name="country" required>
+              <option value="">Select your country</option>
+              <option value="US">United States</option>
+              <option value="GB">United Kingdom</option>
+              <option value="CA">Canada</option>
+              <option value="AU">Australia</option>
+              <option value="DE">Germany</option>
+              <option value="FR">France</option>
+              <option value="NL">Netherlands</option>
+              <option value="IN">India</option>
+              <option value="other">Other</option>
+            </select>
+            <span class="field-error"></span>
+          </div>
+          <div class="form-nav">
+            <button type="button" class="btn btn-primary" onclick="nextStep(1)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Project Details -->
+        <div class="form-panel hidden" id="panel2">
+          <h3>Project Details</h3>
+          <div class="form-group">
+            <label>Service Required *</label>
+            <div class="radio-grid">
+              <label class="radio-card">
+                <input type="radio" name="service" value="fdm" required />
+                <span class="radio-content">
+                  <strong>FDM Printing</strong>
+                  <small>General purpose, functional parts</small>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="service" value="sla" />
+                <span class="radio-content">
+                  <strong>SLA / Resin</strong>
+                  <small>High detail, smooth surface</small>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="service" value="sls" />
+                <span class="radio-content">
+                  <strong>SLS Nylon</strong>
+                  <small>Industrial, complex geometry</small>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="service" value="design" />
+                <span class="radio-content">
+                  <strong>3D Design</strong>
+                  <small>I need a model created</small>
+                </span>
+              </label>
+            </div>
+            <span class="field-error" id="serviceError"></span>
+          </div>
+
+          <div class="form-row" id="materialRow">
+            <div class="form-group">
+              <label for="material">Preferred Material</label>
+              <select id="material" name="material">
+                <option value="">Select material</option>
+                <optgroup label="FDM Materials">
+                  <option>PLA</option>
+                  <option>PETG</option>
+                  <option>ABS</option>
+                  <option>TPU (Flexible)</option>
+                  <option>ASA (UV Resistant)</option>
+                  <option>Carbon Fiber PLA</option>
+                  <option>Wood Fill PLA</option>
+                  <option>Not sure — recommend for me</option>
+                </optgroup>
+                <optgroup label="SLA Resins">
+                  <option>Standard Resin</option>
+                  <option>ABS-Like Resin</option>
+                  <option>Flexible Resin</option>
+                  <option>Castable Resin</option>
+                  <option>Dental Resin</option>
+                </optgroup>
+                <optgroup label="SLS Materials">
+                  <option>PA12 Nylon</option>
+                  <option>Glass-Filled Nylon</option>
+                  <option>TPU Powder</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="color">Color Preference</label>
+              <input type="text" id="color" name="color" placeholder="e.g. Black, White, RAL 5010" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="quantity">Quantity *</label>
+              <input type="number" id="quantity" name="quantity" min="1" value="1" required />
+              <span class="field-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="deadline">Deadline</label>
+              <input type="date" id="deadline" name="deadline" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Finish Level</label>
+            <div class="finish-options">
+              <label class="finish-opt">
+                <input type="radio" name="finish" value="standard" checked />
+                <span>Standard</span>
+                <small>As-printed</small>
+              </label>
+              <label class="finish-opt">
+                <input type="radio" name="finish" value="sanded" />
+                <span>Sanded</span>
+                <small>Smooth finish</small>
+              </label>
+              <label class="finish-opt">
+                <input type="radio" name="finish" value="painted" />
+                <span>Painted</span>
+                <small>Custom color coat</small>
+              </label>
+              <label class="finish-opt">
+                <input type="radio" name="finish" value="professional" />
+                <span>Professional</span>
+                <small>Full post-process</small>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Project Description *</label>
+            <textarea id="description" name="description" rows="5" placeholder="Describe your project, intended use, any special requirements, dimensions if not in a file, etc." required></textarea>
+            <span class="field-error"></span>
+          </div>
+
+          <div class="form-nav">
+            <button type="button" class="btn btn-ghost" onclick="prevStep(2)">← Back</button>
+            <button type="button" class="btn btn-primary" onclick="nextStep(2)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Upload & Submit -->
+        <div class="form-panel hidden" id="panel3">
+          <h3>Upload File & Submit</h3>
+
+          <div class="upload-area" id="uploadArea">
+            <input type="file" id="fileUpload" name="file" accept=".stl,.obj,.step,.stp,.3mf,.iges,.igs,.f3d" multiple />
+            <div class="upload-content" id="uploadContent">
+              <div class="upload-icon">⬆</div>
+              <h4>Drop your file here</h4>
+              <p>or <span class="upload-link">browse to upload</span></p>
+              <small>STL, OBJ, STEP, 3MF, IGES supported · Max 100MB</small>
+            </div>
+            <div class="upload-preview" id="uploadPreview" style="display:none;"></div>
+          </div>
+
+          <div class="form-group" style="margin-top: 1.5rem;">
+            <label>
+              <input type="checkbox" name="noFile" id="noFile" />
+              &nbsp;I don't have a file yet — please contact me to discuss design
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label for="additionalNotes">Additional Notes</label>
+            <textarea id="additionalNotes" name="additionalNotes" rows="3" placeholder="Anything else we should know about your order?"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>How did you hear about us?</label>
+            <select name="referral">
+              <option value="">Select an option</option>
+              <option>Google Search</option>
+              <option>Social Media</option>
+              <option>Friend / Colleague</option>
+              <option>Repeat Customer</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="terms" id="terms" required />
+              &nbsp;I agree to the <a href="#" class="link">Terms of Service</a> and <a href="#" class="link">Privacy Policy</a> *
+            </label>
+            <span class="field-error" id="termsError"></span>
+          </div>
+
+          <div class="form-nav">
+            <button type="button" class="btn btn-ghost" onclick="prevStep(3)">← Back</button>
+            <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+              <span class="btn-text">Submit Order Request</span>
+              <span class="btn-loader" style="display:none;">⟳ Sending...</span>
+            </button>
+          </div>
+        </div>
+
+      </form>
+
+      <!-- SUCCESS -->
+      <div class="order-success hidden" id="orderSuccess">
+        <div class="success-icon">✓</div>
+        <h2>Order Request Received!</h2>
+        <p>Thank you! We've received your request and will email you a detailed quote within a few hours. Check your inbox at <span id="confirmEmail"></span>.</p>
+        <a href="index.html" class="btn btn-primary">Back to Home</a>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="order-sidebar">
+      <div class="sidebar-card">
+        <h4>What happens next?</h4>
+        <ol class="sidebar-steps">
+          <li>We review your file and requirements</li>
+          <li>You receive a detailed quote by email</li>
+          <li>Approve the quote and make payment</li>
+          <li>We start printing your order</li>
+          <li>Your parts are shipped to you</li>
+        </ol>
+      </div>
+      <div class="sidebar-card">
+        <h4>Accepted File Formats</h4>
+        <div class="format-tags">
+          <span class="format-tag">STL</span>
+          <span class="format-tag">OBJ</span>
+          <span class="format-tag">STEP</span>
+          <span class="format-tag">3MF</span>
+          <span class="format-tag">IGES</span>
+          <span class="format-tag">F3D</span>
+        </div>
+        <p style="margin-top:0.75rem; font-size:0.85rem; color:var(--text-muted);">Don't have a file? Select "3D Design" service and describe what you need.</p>
+      </div>
+      <div class="sidebar-card highlight-card">
+        <h4>⚡ Rush Orders</h4>
+        <p>Need your parts urgently? Contact us directly for rush production options — we can often deliver within 24 hours.</p>
+        <a href="mailto:officialscape3d@gmail.com" class="btn btn-outline" style="margin-top:0.75rem; width:100%; text-align:center;">Email Us</a>
+      </div>
+      <div class="sidebar-card">
+        <h4>Questions?</h4>
+        <p>📧 <a href="mailto:officialscape3d@gmail.com" style="color:var(--accent); font-size:0.85rem;">officialscape3d@gmail.com</a></p>
+        <p>📞 <a href="tel:+919887652110" style="color:var(--text-muted)">+91 98876 52110</a></p>
+        <p>📞 <a href="tel:+918209759008" style="color:var(--text-muted)">+91 82097 59008</a></p>
+        <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.5rem;">Mon–Sat 9am–7pm IST</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">SCAPE<span>3D</span></div>
+      <p>Professional 3D printing and design services.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navigation</h4>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="order.html">Order Now</a>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>📧 officialscape3d@gmail.com</p>
+      <p>📞 +91 98876 52110 / +91 82097 59008</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Scape 3D. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/order.js"></script>
+</body>
+</html>

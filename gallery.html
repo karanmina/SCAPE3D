@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Scape 3D</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">SCAPE<span>3D</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html" class="active">Gallery</a></li>
+    <li><a href="order.html" class="nav-cta">Order Now</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="order.html">Order Now</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="section-tag">PORTFOLIO</div>
+    <h1>Our Work</h1>
+    <p>A selection of prints and projects we've produced for clients across industries.</p>
+  </div>
+</section>
+
+<!-- Filter -->
+<section class="gallery-filter-section">
+  <div class="container">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="fdm">FDM</button>
+      <button class="filter-btn" data-filter="sla">SLA Resin</button>
+      <button class="filter-btn" data-filter="sls">SLS Nylon</button>
+      <button class="filter-btn" data-filter="design">3D Design</button>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Grid -->
+<section class="section gallery-section">
+  <div class="container">
+    <div class="gallery-grid" id="galleryGrid">
+
+      <div class="gallery-item" data-category="fdm">
+        <div class="gallery-img g1">
+          <div class="gallery-overlay">
+            <h4>Architectural Model</h4>
+            <span>FDM · PLA · 72hrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item large" data-category="sla">
+        <div class="gallery-img g2">
+          <div class="gallery-overlay">
+            <h4>Dragon Miniature Set</h4>
+            <span>SLA Resin · Ultra Fine</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="sls">
+        <div class="gallery-img g3">
+          <div class="gallery-overlay">
+            <h4>Mechanical Assembly</h4>
+            <span>SLS · PA12 Nylon</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="design">
+        <div class="gallery-img g4">
+          <div class="gallery-overlay">
+            <h4>Product Enclosure</h4>
+            <span>Custom Design + FDM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item tall" data-category="fdm">
+        <div class="gallery-img g5">
+          <div class="gallery-overlay">
+            <h4>Vase Collection</h4>
+            <span>FDM · Silk PLA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="sla">
+        <div class="gallery-img g6">
+          <div class="gallery-overlay">
+            <h4>Dental Model</h4>
+            <span>SLA · Dental Resin</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="sls">
+        <div class="gallery-img g7">
+          <div class="gallery-overlay">
+            <h4>Lattice Pendant</h4>
+            <span>SLS · PA12 Fine</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item large" data-category="fdm">
+        <div class="gallery-img g8">
+          <div class="gallery-overlay">
+            <h4>Cosplay Helmet</h4>
+            <span>FDM · PETG + Painting</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="design">
+        <div class="gallery-img g9">
+          <div class="gallery-overlay">
+            <h4>Ergonomic Grip</h4>
+            <span>Custom Design + TPU</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <h2>Ready to Create Something Amazing?</h2>
+    <p>Every project starts with an idea. Let's make yours a reality.</p>
+    <a href="order.html" class="btn btn-white">Start Your Order →</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">SCAPE<span>3D</span></div>
+      <p>Professional 3D printing and design services. Turning your ideas into physical reality.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navigation</h4>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="order.html">Order Now</a>
+    </div>
+    <div class="footer-links">
+      <h4>Services</h4>
+      <a href="services.html#fdm">FDM Printing</a>
+      <a href="services.html#sla">Resin / SLA</a>
+      <a href="services.html#sls">SLS Nylon</a>
+      <a href="services.html#design">3D Design</a>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>📧 <a href="mailto:officialscape3d@gmail.com" style="color:var(--accent)">officialscape3d@gmail.com</a></p>
+      <p>📞 <a href="tel:+919887652110" style="color:var(--text-muted)">+91 98876 52110</a></p>
+      <p>📞 <a href="tel:+918209759008" style="color:var(--text-muted)">+91 82097 59008</a></p>
+      <p>📍 Jaipur, Rajasthan, India</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Scape 3D. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -207,8 +207,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Try EmailJS — if not configured it throws and we show Gmail fallback
     Promise.all([
-      emailjs.send('YOUR_SERVICE_ID', 'YOUR_ADMIN_TEMPLATE_ID', orderData),
-      emailjs.send('YOUR_SERVICE_ID', 'YOUR_CUSTOMER_TEMPLATE_ID', Object.assign({}, orderData, { to_email: orderData.client_email }))
+      emailjs.send('service_3oxtjbs', 'template_9xmb8rk', orderData),
+      emailjs.send('service_3oxtjbs', 'template_ql4qiko', Object.assign({}, orderData, { to_email: orderData.client_email }))
     ])
     .then(function() {
       showSuccess(orderData.client_email);

@@ -173,15 +173,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // ─────────────────────────────────────────────────────
         // EMAIL 1: Admin notification → officialscape3d@gmail.com
         await emailjs.send(
-          'YOUR_SERVICE_ID',
-          'YOUR_ADMIN_TEMPLATE_ID',
+          'service_3oxtjbs',
+          'template_9xmb8rk',
           { ...orderData, to_email: 'officialscape3d@gmail.com' }
         );
 
         // EMAIL 2: Customer confirmation → client's own email
         await emailjs.send(
-          'YOUR_SERVICE_ID',
-          'YOUR_CUSTOMER_TEMPLATE_ID',
+          'service_3oxtjbs',
+          'YOUR_template_ql4qikoCUSTOMER_TEMPLATE_ID',
           { ...orderData, to_email: orderData.client_email }
         );
 

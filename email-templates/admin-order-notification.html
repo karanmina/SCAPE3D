@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>New Order — Scape 3D</title>
+</head>
+<body style="margin:0;padding:0;background:#0D1318;font-family:'Segoe UI',Arial,sans-serif;">
+
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#0D1318;padding:40px 20px;">
+  <tr>
+    <td align="center">
+      <table width="620" cellpadding="0" cellspacing="0" style="max-width:620px;width:100%;">
+
+        <!-- HEADER -->
+        <tr>
+          <td style="background:#080C10;border:1px solid #1F2D3C;border-bottom:3px solid #00E5FF;border-radius:12px 12px 0 0;padding:32px 40px;text-align:center;">
+            <div style="font-size:28px;font-weight:900;color:#FFFFFF;letter-spacing:-1px;">
+              SCAPE<span style="color:#00E5FF;">3D</span>
+            </div>
+            <div style="margin-top:8px;font-size:11px;letter-spacing:3px;color:#6B8099;text-transform:uppercase;">
+              New Order Notification
+            </div>
+          </td>
+        </tr>
+
+        <!-- ALERT BANNER -->
+        <tr>
+          <td style="background:#00E5FF;padding:14px 40px;text-align:center;">
+            <span style="font-size:14px;font-weight:700;color:#000000;letter-spacing:1px;text-transform:uppercase;">
+              🖨️ &nbsp; New Order Request Received
+            </span>
+          </td>
+        </tr>
+
+        <!-- BODY -->
+        <tr>
+          <td style="background:#111820;border:1px solid #1F2D3C;border-top:none;padding:36px 40px;">
+
+            <p style="margin:0 0 24px;font-size:15px;color:#6B8099;line-height:1.6;">
+              A new order has been submitted on <strong style="color:#E8F0F8;">{{order_date}}</strong>. Full details below.
+            </p>
+
+            <!-- CLIENT INFO -->
+            <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:28px;">
+              <tr>
+                <td style="padding-bottom:10px;">
+                  <div style="font-size:10px;letter-spacing:3px;color:#00E5FF;text-transform:uppercase;font-weight:700;margin-bottom:12px;">
+                    CLIENT DETAILS
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="background:#0D1318;border:1px solid #1F2D3C;border-radius:8px;padding:20px;">
+                  <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="50%" style="padding:6px 0;">
+                        <div style="font-size:11px;color:#6B8099;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Name</div>
+                        <div style="font-size:15px;font-weight:600;color:#E8F0F8;">{{client_name}}</div>
+                      </td>
+                      <td width="50%" style="padding:6px 0;">
+                        <div style="font-size:11px;color:#6B8099;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Email</div>
+                        <div style="font-size:15px;font-weight:600;color:#00E5FF;">
+                          <a href="mailto:{{client_email}}" style="color:#00E5FF;text-decoration:none;">{{client_email}}</a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="50%" style="padding:10px 0 6px;">
+                        <div style="font-size:11px;color:#6B8099;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Phone</div>
+                        <div style="font-size:15px;font-weight:600;color:#E8F0F8;">{{client_phone}}</div>
+                      </td>
+                      <td width="50%" style="padding:10px 0 6px;">
+                        <div style="font-size:11px;color:#6B8099;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Country</div>
+                        <div style="font-size:15px;font-weight:600;color:#E8F0F8;">{{client_country}}</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" style="padding:10px 0 6px;">
+                        <div style="font-size:11px;color:#6B8099;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Company</div>
+                        <div style="font-size:15px;font-weight:600;color:#E8F0F8;">{{client_company}}</div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+            <!-- ORDER DETAILS -->
+            <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:28px;">
+              <tr>
+                <td style="padding-bottom:10px;">
+                  <div style="font-size:10px;letter-spacing:3px;color:#00E5FF;text-transform:uppercase;font-weight:700;margin-bottom:12px;">
+                    ORDER DETAILS
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="50%" style="padding:0 6px 12px 0;">
+                        <div style="background:#0D1318;border:1px solid #1F2D3C;border-radius:8px;padding:16px;">
+                          <div style="font-size:10px;color:#6B8099;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;">Service</div>
+                          <div style="font-size:18px;font-weight:800;color:#00E5FF;">{{service}}</div>
+                        </div>
+                      </td>
+                      <td width="50%" style="padding:0 0 12px 6px;">
+                        <div style="background:#0D1318;border:1px solid #1F2D3C;border-radius:8px;padding:16px;">
+                          <div style="font-size:10px;color:#6B8099;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;">Quantity</div>
+                          <div style="font-size:18px;font-weight:800;color:#E8F0F8;">{{quantity}}</div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="50%" style="padding:0 6px 12px 0;">
+                        <div style="background:#0D1318;border:1px solid #1F2D3C;border-radius:8px;padding:16px;">
+                          <div style="font-size:10px;color:#6B8099;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;">Material</div>
+                          <div style="font-size:15px;font-weight:700;color:#E8F0F8;">{{material}}</div>
+                        </div>
+                      </td>
+                      <td width="50%" style="padding:0 0 12px 6px;">
+                        <div style="background:#0D1318;border:1px solid #1F2D3C;border-radius:8px;padding:16px;">
+                          <div style="font-size:10px;color:#6B8099;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;">Color</div>
+                          <div style="font-size:15px;font-weight:700;color:#E8F0F8;">{{color}}</div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="50%" style="padding:0 6px 0 0;">
+                        <div style="background:#0D1318;border:1px solid #1F2D3C;border-radius:8px;padding:16px;">
+                          <div style="font-size:10px;color:#6B8099;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;">Finish Level</div>
+                          <div style="font-size:15px;font-weight:700;color:#E8F0F8;">{{finish}}</div>
+                        </div>
+                      </td>
+                      <td width="50%" style="padding:0 0 0 6px;">
+                        <div style="background:#0D1318;border:1px solid #1F2D3C;border-radius:8px;padding:16px;">
+                          <div style="font-size:10px;color:#6B8099;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;">Deadline</div>
+                          <div style="font-size:15px;font-weight:700;color:#E8F0F8;">{{deadline}}</div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+            <!-- PROJECT DESCRIPTION -->
+            <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:28px;">
+              <tr>
+                <td>
+                  <div style="font-size:10px;letter-spacing:3px;color:#00E5FF;text-transform:uppercase;font-weight:700;margin-bottom:12px;">
+                    PROJECT DESCRIPTION
+                  </div>
+                  <div style="background:#0D1318;border:1px solid #1F2D3C;border-left:3px solid #00E5FF;border-radius:0 8px 8px 0;padding:20px;font-size:14px;color:#B0C4D8;line-height:1.8;">
+                    {{description}}
+                  </div>
+                </td>
+              </tr>
+            </table>
+
+            <!-- FILES & NOTES -->
+            <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:28px;">
+              <tr>
+                <td width="50%" style="padding-right:8px;vertical-align:top;">
+                  <div style="font-size:10px;letter-spacing:3px;color:#00E5FF;text-transform:uppercase;font-weight:700;margin-bottom:10px;">Files Submitted</div>
+                  <div style="background:#0D1318;border:1px solid #1F2D3C;border-radius:8px;padding:16px;font-size:13px;color:#B0C4D8;">{{files}}</div>
+                </td>
+                <td width="50%" style="padding-left:8px;vertical-align:top;">
+                  <div style="font-size:10px;letter-spacing:3px;color:#00E5FF;text-transform:uppercase;font-weight:700;margin-bottom:10px;">Additional Notes</div>
+                  <div style="background:#0D1318;border:1px solid #1F2D3C;border-radius:8px;padding:16px;font-size:13px;color:#B0C4D8;">{{notes}}</div>
+                </td>
+              </tr>
+            </table>
+
+            <!-- ACTION BUTTON -->
+            <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td align="center" style="padding:8px 0 16px;">
+                  <a href="mailto:{{client_email}}?subject=Re: Your Scape 3D Order Quote&body=Hi {{client_name}},"
+                     style="display:inline-block;background:#00E5FF;color:#000000;font-size:14px;font-weight:700;text-decoration:none;padding:14px 36px;border-radius:8px;letter-spacing:0.5px;">
+                    Reply to Client →
+                  </a>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+
+        <!-- FOOTER -->
+        <tr>
+          <td style="background:#080C10;border:1px solid #1F2D3C;border-top:none;border-radius:0 0 12px 12px;padding:20px 40px;text-align:center;">
+            <p style="margin:0;font-size:12px;color:#3D5570;">
+              This email was sent by the Scape 3D order system &nbsp;·&nbsp;
+              <a href="mailto:akirakaran2124@gmail.com" style="color:#6B8099;text-decoration:none;">akirakaran2124@gmail.com</a>
+            </p>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

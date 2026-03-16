@@ -1,6 +1,6 @@
 // =============================================
 // SCAPE 3D — Order Form + EmailJS
-// Admin    → officialscape3d@gmail.com
+// Admin    → akirakaran2124@gmail.com
 // Customer → their own email
 // =============================================
 
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     var orderData = {
-      to_email:       'officialscape3d@gmail.com',
+      to_email:       'akirakaran2124@gmail.com',
       reply_to:       document.getElementById('email').value,
       client_name:    document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value,
       client_email:   document.getElementById('email').value,
@@ -207,8 +207,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Try EmailJS — if not configured it throws and we show Gmail fallback
     Promise.all([
-      emailjs.send('service_8sok3bh', 'template_z6fgrk9', orderData),
-      emailjs.send('service_8sok3bh', 'template_ajd8vzj', Object.assign({}, orderData, { to_email: orderData.client_email }))
+      emailjs.send('service_azcnjts', 'template_8wehudq', orderData),
+      emailjs.send('service_azcnjts', 'template_sspteah', Object.assign({}, orderData, { to_email: orderData.client_email }))
     ])
     .then(function() {
       showSuccess(orderData.client_email);
@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Gmail compose URL — opens Gmail directly, no blank screen
     var gmailLink = 'https://mail.google.com/mail/?view=cm' +
-      '&to=officialscape3d%40gmail.com' +
+      '&to=akirakaran2124%40gmail.com' +
       '&su=' + encodeURIComponent(subject) +
       '&body=' + encodeURIComponent(body);
 
